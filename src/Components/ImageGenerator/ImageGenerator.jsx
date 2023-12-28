@@ -5,6 +5,14 @@ import './ImageGenerator.css';
 import default_image from '../Assets/default_image.svg';
 
 const ImageGenerator = () => {
+
+    // hide it const apiKey = process.env.REACT_APP_OPENAI_API_KEY
+
+    // Log the value to the console
+    //hide it console.log('API Key:', apiKey);
+  
+
+
     const [image_url, setImage_url] = useState('/');
     const [logs, setLogs] = useState([]);
     const [loading, setLoading] = useState(false);
@@ -46,7 +54,7 @@ const ImageGenerator = () => {
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/json',
-                        Authorization: 'Bearer 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',
+                        Authorization: `Bearer ${process.env.REACT_APP_OPENAI_API_KEY}`,
                         'User-Agent': 'Chrome',
                     },
                     body: JSON.stringify({
