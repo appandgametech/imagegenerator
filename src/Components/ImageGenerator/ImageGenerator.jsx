@@ -46,7 +46,7 @@ const ImageGenerator = () => {
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/json',
-                        Authorization: 'Bearer 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',
+                        Authorization: 'Bearer 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',
                         'User-Agent': 'Chrome',
                     },
                     body: JSON.stringify({
@@ -100,6 +100,18 @@ const ImageGenerator = () => {
         }, 7000);
     };
 
+    const handleModelChange = (e) => {
+        const selectedModel = e.target.value;
+        setModel(selectedModel);
+
+        // Adjust the size options based on the selected model
+        if (selectedModel === 'dall-e-2') {
+            setSize('512x512');
+        } else if (selectedModel === 'dall-e-3') {
+            setSize('1024x1024');
+        }
+    };
+
     return (
         <div className='ai-image-generator'>
             <div className='header'>
@@ -108,7 +120,6 @@ const ImageGenerator = () => {
             <div className='header1'>
                 By <span>MuzzyGames</span>
             </div>
-
             <div className='intro'>
                 <p>
                     Welcome to our AI image generator! Create unique and fascinating images using
@@ -130,7 +141,7 @@ const ImageGenerator = () => {
             <div className='settings'>
                 <label>
                     Model:
-                    <select value={model} onChange={(e) => setModel(e.target.value)}>
+                    <select value={model} onChange={handleModelChange}>
                         <option value='dall-e-2'>DALL-E 2</option>
                         <option value='dall-e-3'>DALL-E 3</option>
                     </select>
@@ -138,8 +149,8 @@ const ImageGenerator = () => {
                 <label>
                     Size:
                     <select value={size} onChange={(e) => setSize(e.target.value)}>
-                        <option value='512x512'>512x512</option>
-                        <option value='1024x1024'>1024x1024</option>
+                        {model === 'dall-e-2' && <option value='512x512'>512x512</option>}
+                        {model === 'dall-e-3' && <option value='1024x1024'>1024x1024</option>}
                     </select>
                 </label>
             </div>
