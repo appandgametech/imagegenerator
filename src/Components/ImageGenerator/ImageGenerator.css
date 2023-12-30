@@ -8,7 +8,7 @@
     margin-top: 10px;
     margin-bottom: 10px;
     gap: 8px;
-    margin: 10px; /* Added margin */
+    padding: 10px; /* Added padding instead of margin */
 }
 
 .header {
@@ -35,7 +35,7 @@
 }
 
 .img-loading img {
-    width: 200px;
+    width: 400px;
 }
 
 .settings {
@@ -74,17 +74,20 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 100px;
+    width: 120px;
     height: 45px;
     font-size: 20px;
     border-radius: 50px;
     background: #de1b89;
+    border: 2px solid #de1b89;
+    color: #fff;
     cursor: pointer;
+    transition: background-color 0.3s ease, border-color 0.3s ease;
 }
 
 .generate-btn:disabled {
-    background-color: #ccc; /* Grey color */
-    cursor: not-allowed; /* Change cursor on disabled state */
+    background-color: #ccc;
+    cursor: not-allowed;
 }
 
 .generate-btn.loading {
@@ -121,10 +124,10 @@
     cursor: pointer;
     background: #fff;
     border: 1px solid #007bff;
-    color: #007bff;
+    color: #040404;
     font-size: 14px;
-    padding: 1px 2px; /* Adjusted padding for a smaller button */
-    border-radius: 4px; /* Added border-radius for rounded corners */
+    padding: 1px 2px;
+    border-radius: 4px;
     transition: background 0.3s ease;
 }
 
@@ -137,10 +140,10 @@
     cursor: pointer;
     background: #fff;
     border: 1px solid #007bff;
-    color: #007bff;
+    color: #040404;
     font-size: 14px;
-    padding: 1px 2px; /* Adjusted padding for a smaller button */
-    border-radius: 4px; /* Added border-radius for rounded corners */
+    padding: 1px 2px;
+    border-radius: 4px;
     transition: background 0.3s ease;
 }
 
@@ -153,7 +156,7 @@
     max-height: 300px;
     overflow-y: auto;
     white-space: pre-wrap;
-    overflow-x: hidden; /* Add this line to hide horizontal scroll */
+    overflow-x: hidden;
 }
 
 .logs ul {
@@ -164,6 +167,48 @@
 
 .logs li {
     margin-bottom: 5px;
-    word-wrap: break-word; /* Add this line to break long words and prevent overflow */
-    max-width: 100%; /* Add this line to ensure text doesn't overflow on smaller screens */
+    word-wrap: break-word;
+    max-width: 100%;
+}
+
+/* Media query for larger screens */
+@media screen and (min-width: 768px) {
+    .ai-image-generator {
+        flex-direction: column; /* Change to column */
+        max-width: 800px; /* Adjust the maximum width as needed */
+    }
+
+    /* Other styles remain unchanged */
+    .header {
+        font-size: 80px;
+    }
+
+    .header1 {
+        font-size: 30px;
+    }
+
+    .img-loading img {
+        width: 400px;
+    }
+
+    .settings {
+        width: 50%;
+    }
+
+    .search-box {
+        width: 800px;
+    }
+
+    .search-input {
+        width: 750px;
+    }
+
+    .generate-btn {
+        width: 350px;
+    }
+
+    .toggle-intro-container,
+    .toggle-logs-container {
+        width: 50%;
+    }
 }
