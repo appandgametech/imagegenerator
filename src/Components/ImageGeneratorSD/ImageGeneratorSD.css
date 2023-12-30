@@ -1,8 +1,10 @@
 /* ImageGeneratorSD.css */
 
-body {
+/* Add this to your ImageGeneratorSD.css file */
+.no-scroll {
     overflow: hidden;
   }
+  
 
 .iframe-container {
     height: 600px; /* Adjust the height as needed */

@@ -1,10 +1,12 @@
-// ImageGeneratorSD.js
 import React, { useEffect } from 'react';
 import Iframe from 'react-iframe';
 import './ImageGeneratorSD.css';
 
 const ImageGeneratorSD = () => {
   useEffect(() => {
+    // Add a class to the body when the component mounts
+    document.body.classList.add('no-scroll');
+
     const iframe = document.getElementById('myId');
     const overlayDiv = document.createElement('div');
 
@@ -12,7 +14,8 @@ const ImageGeneratorSD = () => {
     iframe.parentNode.insertBefore(overlayDiv, iframe);
 
     return () => {
-      // Clean up the overlay when the component unmounts.
+      // Remove the class and clean up the overlay when the component unmounts
+      document.body.classList.remove('no-scroll');
       if (overlayDiv.parentNode) {
         overlayDiv.parentNode.removeChild(overlayDiv);
       }
