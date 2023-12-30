@@ -165,5 +165,5 @@
 .logs li {
     margin-bottom: 5px;
     word-wrap: break-word; /* Add this line to break long words and prevent overflow */
+    max-width: 100%; /* Add this line to ensure text doesn't overflow on smaller screens */
 }
-
