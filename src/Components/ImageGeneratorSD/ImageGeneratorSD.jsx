@@ -12,7 +12,7 @@ const ImageGeneratorSD = () => {
     iframe.parentNode.insertBefore(overlayDiv, iframe);
 
     return () => {
-      // Clean up the overlay when the component unmounts
+      // Clean up the overlay when the component unmounts.
       if (overlayDiv.parentNode) {
         overlayDiv.parentNode.removeChild(overlayDiv);
       }
@@ -24,7 +24,7 @@ const ImageGeneratorSD = () => {
       <h1>AI Image Generator SD</h1>
       <div className="iframe-container">
         <Iframe
-          url="https://app.prodia.com"
+          url="https://app.prodia.com/"
           width="100%"
           height="600px"
           id="myId"
