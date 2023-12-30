@@ -11,18 +11,6 @@
     margin: 10px; /* Added margin */
 }
 
-.intro {
-    max-width: 800px;
-    text-align: center;
-    margin-bottom: 10px;
-    font-size: 12px;
-    color: #999;
-}
-
-.intro p {
-    margin-bottom: 15px;
-}
-
 .header {
     font-size: 45px;
     font-weight: 325;
@@ -94,14 +82,11 @@
     cursor: pointer;
 }
 
-/* ImageGenerator.css */
-
 .generate-btn:disabled {
     background-color: #ccc; /* Grey color */
     cursor: not-allowed; /* Change cursor on disabled state */
 }
 
-/* Add this if you want to change the style when the button is loading */
 .generate-btn.loading {
     background-color: #ccc;
     cursor: not-allowed;
@@ -126,4 +111,56 @@
 
 .display-none {
     display: none;
+}
+
+.toggle-intro-container {
+    margin-top: 10px;
+}
+
+.toggle-intro-btn {
+    cursor: pointer;
+    background: #fff;
+    border: 1px solid #007bff;
+    color: #007bff;
+    font-size: 14px;
+    padding: 1px 2px; /* Adjusted padding for a smaller button */
+    border-radius: 4px; /* Added border-radius for rounded corners */
+    transition: background 0.3s ease;
+}
+
+.toggle-intro-btn:hover {
+    background: #007bff;
+    color: #fff;
+}
+
+.toggle-logs-btn {
+    cursor: pointer;
+    background: #fff;
+    border: 1px solid #007bff;
+    color: #007bff;
+    font-size: 14px;
+    padding: 1px 2px; /* Adjusted padding for a smaller button */
+    border-radius: 4px; /* Added border-radius for rounded corners */
+    transition: background 0.3s ease;
+}
+
+.toggle-logs-btn:hover {
+    background: #007bff;
+    color: #fff;
+}
+
+#logs-container {
+    max-height: 300px;
+    overflow-y: auto;
+    white-space: pre-wrap;
+}
+
+.logs ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.logs li {
+    margin-bottom: 5px;
 }
