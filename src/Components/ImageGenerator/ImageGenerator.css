@@ -153,6 +153,7 @@
     max-height: 300px;
     overflow-y: auto;
     white-space: pre-wrap;
+    overflow-x: hidden; /* Add this line to hide horizontal scroll */
 }
 
 .logs ul {
@@ -163,4 +164,6 @@
 
 .logs li {
     margin-bottom: 5px;
+    word-wrap: break-word; /* Add this line to break long words and prevent overflow */
 }
+
