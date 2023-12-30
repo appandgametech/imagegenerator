@@ -2,13 +2,13 @@
 
 .iframe-container {
     height: 600px; /* Adjust the height as needed */
-    overflow: hidden; /* Optional: Hide any overflow content */
+    overflow: show; /* Optional: Hide any overflow content */
     position: relative;
   }
   
   .image-generator-sd {
     text-align: center;
-    margin: 20px;
+    margin: 10px;
   }
   
   .image-generator-sd h1 {
@@ -34,7 +34,7 @@
     top: 0;
     left: 0;
     width: 100%;
-    height: 12%; /* Adjust the height as needed */
+    height: 20%; /* Adjust the height as needed */
     background-color: rgb(18, 24, 25); /* Set the color or background image */
     z-index: 9999;
   }
