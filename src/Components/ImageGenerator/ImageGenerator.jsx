@@ -1,5 +1,3 @@
-// ImageGenerator.js
-
 import React, { useRef, useState, useEffect } from 'react';
 import './ImageGenerator.css';
 import default_image from '../Assets/default_image.svg';
@@ -33,6 +31,12 @@ const ImageGenerator = () => {
 
   const toggleIntroVisibility = () => {
     setIntroExpanded(!introExpanded);
+  };
+
+  const handleImageError = () => {
+    // Handle image loading error for the default image
+    console.error('Error loading default image');
+    // You can add additional logic here, such as setting a different default image
   };
 
   const imageGenerator = async () => {
@@ -123,7 +127,12 @@ const ImageGenerator = () => {
       </div>
       <div className='img-loading'>
         <div className='image'>
-          <img key={image_url} src={image_url === '/' ? default_image : image_url} alt='' />
+          <img
+            key={image_url}
+            src={image_url === '/' ? default_image : image_url}
+            alt=''
+            onError={handleImageError}
+          />
         </div>
         <div className={loading ? 'loading-bar-full' : 'loading-bar'}></div>
         <div className={loading ? 'loading-text' : 'display-none'}>Loading...</div>
@@ -160,73 +169,76 @@ const ImageGenerator = () => {
         </div>
       </div>
 
-
-
-<div className='toggle-intro-container'>
-  <h3>
-    Instructions:{' '}
-    <button className={`toggle-intro-btn ${introExpanded ? 'expanded' : 'collapsed'}`} onClick={toggleIntroVisibility}>
-      {introExpanded ? 'Collapse' : 'Expand'}
-    </button>
-  </h3>
-  {introExpanded && (
-    <div className={`intro expanded`}>
-      <p>
-        Welcome to our AI image generator! Create unique and fascinating images using the latest
-        version of DALL-E 3. Explore the frequently asked questions below for more information.
-        Be sure to be very descriptive in your prompts; for example, if you want a realistic photo
-        of something, at the end of your prompt type realistic high resolution. Please note that DALL-E/OpenAI
-        sometimes will rewrite your prompt either to make it more descriptive for better results or to filter out
-        restricted content as per their terms and conditions. To check if they rewrote your prompts, please expand
-        the logs section below, and you'll see what they rewrote it to.
-      </p>
-      <div className="faq">
-        <h4>Frequently Asked Questions</h4>
-        <p>
-          <strong style={{ color: '#de1b89' }}>Q: What model do I choose?</strong>
-        </p>
-        <p>
-          <strong>A:</strong> We offer two models, DALL-E 2 and DALL-E 3. DALL-E 2 is suitable for generating images
-          with a resolution of 512x512 pixels, while DALL-E 3 can generate higher-resolution images at 1024x1024 pixels.
-          Choose the model based on your specific requirements for image resolution and fidelity.
-        </p>
-        <p>
-          <strong style={{ color: '#de1b89' }}>Q: Does the model generate NSFW content or celebrities?</strong>
-        </p>
-        <p>
-          <strong>A:</strong> No, the models are designed to ensure that generated images are free from NSFW (Not Safe
-          For Work) content and known celebrities. If you're interested in generating such content, please check out
-          our other image generators.
-        </p>
-        <p>
-          <strong style={{ color: '#de1b89' }}>Q: Can these models generate XYZ?</strong>
-        </p>
-        <p>
-          <strong>A:</strong> The models have limitations, and they may not be able to generate certain types of content.
-          If you have specific requirements, please check our other image generators to find a model that suits your needs.
-        </p>
-        <p>
-          <strong style={{ color: '#de1b89' }}>
-            Q: I checked the logs after I generated an image, and DALL-E/OpenAI rewrote my prompt.
-            Why does this happen?
-          </strong>
-        </p>
-        <p>
-          <strong>A:</strong> The rewriting of prompts by DALL-E/OpenAI is part of the model's behavior. It aims to enhance
-          the prompt's descriptiveness for better image generation results or to filter out restricted content as per their
-          terms and conditions. Unfortunately, we cannot control this aspect of the model. If you prefer not to have your
-          prompts rewritten, we recommend checking out our other image generators, as they may not have this restriction.
-        </p>
+      <div className='toggle-intro-container'>
+        <h3>
+          Instructions:{' '}
+          <button
+            className={`toggle-intro-btn ${introExpanded ? 'expanded' : 'collapsed'}`}
+            onClick={toggleIntroVisibility}
+          >
+            {introExpanded ? 'Collapse' : 'Expand'}
+          </button>
+        </h3>
+        {introExpanded && (
+          <div className={`intro expanded`}>
+            <p>
+              Welcome to our AI image generator! Create unique and fascinating images using the latest
+              version of DALL-E 3. Explore the frequently asked questions below for more information.
+              Be sure to be very descriptive in your prompts; for example, if you want a realistic photo
+              of something, at the end of your prompt type realistic high resolution. Please note that DALL-E/OpenAI
+              sometimes will rewrite your prompt either to make it more descriptive for better results or to filter out
+              restricted content as per their terms and conditions. To check if they rewrote your prompts, please expand
+              the logs section below, and you'll see what they rewrote it to.
+            </p>
+            <div className='faq'>
+              <h4>Frequently Asked Questions</h4>
+              <p>
+                <strong style={{ color: '#de1b89' }}>Q: What model do I choose?</strong>
+              </p>
+              <p>
+                <strong>A:</strong> We offer two models, DALL-E 2 and DALL-E 3. DALL-E 2 is suitable for generating images
+                with a resolution of 512x512 pixels, while DALL-E 3 can generate higher-resolution images at 1024x1024 pixels.
+                Choose the model based on your specific requirements for image resolution and fidelity.
+              </p>
+              <p>
+                <strong style={{ color: '#de1b89' }}>Q: Does the model generate NSFW content or celebrities?</strong>
+              </p>
+              <p>
+                <strong>A:</strong> No, the models are designed to ensure that generated images are free from NSFW (Not Safe
+                For Work) content and known celebrities. If you're interested in generating such content, please check out
+                our other image generators.
+              </p>
+              <p>
+                <strong style={{ color: '#de1b89' }}>Q: Can these models generate XYZ?</strong>
+              </p>
+              <p>
+                <strong>A:</strong> The models have limitations, and they may not be able to generate certain types of content.
+                If you have specific requirements, please check our other image generators to find a model that suits your needs.
+              </p>
+              <p>
+                <strong style={{ color: '#de1b89' }}>
+                  Q: I checked the logs after I generated an image, and DALL-E/OpenAI rewrote my prompt.
+                  Why does this happen?
+                </strong>
+              </p>
+              <p>
+                <strong>A:</strong> The rewriting of prompts by DALL-E/OpenAI is part of the model's behavior. It aims to enhance
+                the prompt's descriptiveness for better image generation results or to filter out restricted content as per their
+                terms and conditions. Unfortunately, we cannot control this aspect of the model. If you prefer not to have your
+                prompts rewritten, we recommend checking out our other image generators, as they may not have this restriction.
+              </p>
+            </div>
+          </div>
+        )}
       </div>
-    </div>
-  )}
-</div>
-
 
       <div className='logs' id='logs-container'>
         <h3>
           Logs:{' '}
-          <button className={`toggle-logs-btn ${logsExpanded ? 'expanded' : 'collapsed'}`} onClick={toggleLogsVisibility}>
+          <button
+            className={`toggle-logs-btn ${logsExpanded ? 'expanded' : 'collapsed'}`}
+            onClick={toggleLogsVisibility}
+          >
             {logsExpanded ? 'Collapse' : 'Expand'}
           </button>
         </h3>

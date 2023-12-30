@@ -153,10 +153,7 @@
 }
 
 #logs-container {
-    max-height: 300px;
-    overflow-y: auto;
-    white-space: pre-wrap;
-    overflow-x: hidden;
+    margin-top: 10px;
 }
 
 .logs ul {
