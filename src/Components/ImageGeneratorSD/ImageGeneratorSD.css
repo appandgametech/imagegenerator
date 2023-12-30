@@ -1,26 +1,41 @@
 /* ImageGeneratorSD.css */
 
 .iframe-container {
-  height: 1000px; /* Adjust the height as needed */
-  overflow: hidden; /* Optional: Hide any overflow content */
-}
+    height: 600px; /* Adjust the height as needed */
+    overflow: hidden; /* Optional: Hide any overflow content */
+    position: relative;
+  }
+  
+  .image-generator-sd {
+    text-align: center;
+    margin: 20px;
+  }
+  
+  .image-generator-sd h1 {
+    font-size: 24px;
+    margin-bottom: 20px;
+  }
+  
+  .image-generator-sd img {
+    max-width: 100%;
+    max-height: 100%; /* Adjust the maximum height as needed */
+    margin-top: 20px;
+    border: 1px solid #ddd; /* Add a border for better visibility */
+    border-radius: 8px; /* Optional: Add border-radius for a rounded appearance */
+  }
+  
+  /* Add more styles as needed */
+  
+  /* ImageGeneratorSD.css */
 
-.image-generator-sd {
-  text-align: center;
-  margin: 20px;
-}
-
-.image-generator-sd h1 {
-  font-size: 24px;
-  margin-bottom: 20px;
-}
-
-.image-generator-sd img {
-  max-width: 100%;
-  max-height: 100%; /* Adjust the maximum height as needed */
-  margin-top: 20px;
-  border: 1px solid #ddd; /* Add a border for better visibility */
-  border-radius: 8px; /* Optional: Add border-radius for a rounded appearance */
-}
-
-/* Add more styles as needed */
+.overlay {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 12%; /* Adjust the height as needed */
+    background-color: rgb(18, 24, 25); /* Set the color or background image */
+    z-index: 9999;
+  }
+  
