@@ -1,5 +1,9 @@
 /* ImageGeneratorSD.css */
 
+body {
+    overflow: hidden;
+  }
+
 .iframe-container {
     height: 600px; /* Adjust the height as needed */
     overflow: show; /* Optional: Hide any overflow content */
