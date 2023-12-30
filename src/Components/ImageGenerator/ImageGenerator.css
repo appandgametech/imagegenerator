@@ -1,5 +1,3 @@
-/* ImageGenerator.css */
-
 .ai-image-generator {
     display: flex;
     flex-direction: column;
@@ -116,40 +114,24 @@
     display: none;
 }
 
+.toggle-btn {
+    cursor: pointer;
+    background: #fff;
+    border: 1px solid #007bff;
+    color: #040404;
+    font-size: 14px;
+    padding: 1px 2px;
+    border-radius: 4px;
+    transition: background 0.3s ease;
+}
+
+.toggle-btn:hover {
+    background: #007bff;
+    color: #fff;
+}
+
 .toggle-intro-container {
     margin-top: 10px;
-}
-
-.toggle-intro-btn {
-    cursor: pointer;
-    background: #fff;
-    border: 1px solid #007bff;
-    color: #040404;
-    font-size: 14px;
-    padding: 1px 2px;
-    border-radius: 4px;
-    transition: background 0.3s ease;
-}
-
-.toggle-intro-btn:hover {
-    background: #007bff;
-    color: #fff;
-}
-
-.toggle-logs-btn {
-    cursor: pointer;
-    background: #fff;
-    border: 1px solid #007bff;
-    color: #040404;
-    font-size: 14px;
-    padding: 1px 2px;
-    border-radius: 4px;
-    transition: background 0.3s ease;
-}
-
-.toggle-logs-btn:hover {
-    background: #007bff;
-    color: #fff;
 }
 
 #logs-container {
@@ -205,7 +187,7 @@
     }
 
     .toggle-intro-container,
-    .toggle-logs-container {
+    .logs {
         width: 50%;
     }
 }

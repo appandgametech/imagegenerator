@@ -48,23 +48,20 @@ const ImageGenerator = () => {
     setLoading(true);
 
     try {
-      const response = await fetch(
-        'https://api.openai.com/v1/images/generations',
-        {
-          method: 'POST',
-          headers: {
-            'Content-Type': 'application/json',
-            Authorization: `Bearer ${process.env.REACT_APP_OPENAI_API_KEY}`,
-            'User-Agent': 'Chrome',
-          },
-          body: JSON.stringify({
-            model: model,
-            prompt: `${inputRef.current.value} I NEED to test how the tool works with extremely simple prompts. DO NOT add any detail, just use it AS-IS:`,
-            n: 1,
-            size: size,
-          }),
-        }
-      );
+      const response = await fetch('https://api.openai.com/v1/images/generations', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          Authorization: `Bearer ${process.env.REACT_APP_OPENAI_API_KEY}`,
+          'User-Agent': 'Chrome',
+        },
+        body: JSON.stringify({
+          model: model,
+          prompt: `${inputRef.current.value} I NEED to test how the tool works with extremely simple prompts. DO NOT add any detail, just use it AS-IS:`,
+          n: 1,
+          size: size,
+        }),
+      });
 
       if (!response.ok) {
         if (response.status === 400) {
@@ -173,7 +170,7 @@ const ImageGenerator = () => {
         <h3>
           Instructions:{' '}
           <button
-            className={`toggle-intro-btn ${introExpanded ? 'expanded' : 'collapsed'}`}
+            className={`toggle-btn ${introExpanded ? 'expanded' : 'collapsed'}`}
             onClick={toggleIntroVisibility}
           >
             {introExpanded ? 'Collapse' : 'Expand'}
@@ -236,7 +233,7 @@ const ImageGenerator = () => {
         <h3>
           Logs:{' '}
           <button
-            className={`toggle-logs-btn ${logsExpanded ? 'expanded' : 'collapsed'}`}
+            className={`toggle-btn ${logsExpanded ? 'expanded' : 'collapsed'}`}
             onClick={toggleLogsVisibility}
           >
             {logsExpanded ? 'Collapse' : 'Expand'}

@@ -26,6 +26,9 @@ const HomePage = () => {
         <Link to="/image-generator" className="option-button">
           DALL-E Image Generator
         </Link>
+        <Link to="/image-generator-sd" className="option-button"> {/* New Link for ImageGeneratorSD */}
+          Image Generator SD
+        </Link>
         {/* Add more options as needed */}
       </div>
     </div>

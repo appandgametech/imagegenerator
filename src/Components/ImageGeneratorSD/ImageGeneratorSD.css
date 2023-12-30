@@ -1,0 +1,22 @@
+/* ImageGeneratorSD.css */
+
+.image-generator-sd {
+    text-align: center;
+    margin: 20px;
+  }
+  
+  .image-generator-sd h1 {
+    font-size: 24px;
+    margin-bottom: 20px;
+  }
+  
+  .image-generator-sd img {
+    max-width: 100%;
+    max-height: 400px; /* Adjust the maximum height as needed */
+    margin-top: 20px;
+    border: 1px solid #ddd; /* Add a border for better visibility */
+    border-radius: 8px; /* Optional: Add border-radius for a rounded appearance */
+  }
+  
+  /* Add more styles as needed */
+  
