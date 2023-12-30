@@ -165,7 +165,7 @@
 .logs li {
     margin-bottom: 5px;
     word-wrap: break-word;
-    max-width: 100%;
+    max-width: 50%;
 }
 
 /* Media query for larger screens */
