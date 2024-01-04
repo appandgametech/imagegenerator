@@ -13,7 +13,7 @@
 }
 
 h1 {
-  color: #de1b89;
+  color: white;
   font-size: 28px;
 }
 
@@ -32,6 +32,10 @@ p {
   color: #333;
 }
 
+/* HomePage.css */
+
+/* ... (previous styles) */
+
 .options {
   display: flex;
   justify-content: center;
@@ -39,8 +43,8 @@ p {
 }
 
 .option-button {
-  background-color: #de1b89;
-  color: #fff;
+  background-color: #d3bb06;
+  color: #000; /* Set the text color to black */
   padding: 15px 30px;
   border: none;
   border-radius: 8px;
@@ -55,6 +59,7 @@ p {
   background-color: #b7177d;
 }
 
+
 /* Expandable Sections Styles */
 .expandable-section {
   margin-top: 20px;
@@ -63,7 +68,7 @@ p {
 .toggle-btn {
   border: none;
   background: none;
-  color: #de1b89;
+  color: #d8de1b;
   font-size: 16px;
   cursor: pointer;
 }
