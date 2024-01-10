@@ -1,3 +1,4 @@
+// HomePage.jsx
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import './HomePage.css';
@@ -35,25 +36,25 @@ const HomePage = () => {
   };
 
   return (
-    <div className="home-page">
+    <div className="home-page-container">
       <h1>
         Welcome to AI Image Generator <br />
         <span className="by-text">by</span> Muzzy Games
       </h1>
 
       {/* About Us Section */}
-      <div className="expandable-section">
+      <div className="home-page-expandable-section">
         <h3>
           About Us{' '}
           <button
-            className={`toggle-btn ${aboutUsExpanded ? 'expanded' : 'collapsed'}`}
+            className={`home-page-toggle-btn ${aboutUsExpanded ? 'expanded' : 'collapsed'}`}
             onClick={toggleAboutUsVisibility}
           >
             {aboutUsExpanded ? 'Collapse' : 'Expand'}
           </button>
         </h3>
         {aboutUsExpanded && (
-          <div className="expandable-content">
+          <div className="home-page-expandable-content">
             <p>
               Welcome to Muzzy Games! We are a team of passionate individuals dedicated to
               creating innovative apps, from gaming experiences to cutting-edge AI applications.
@@ -63,18 +64,18 @@ const HomePage = () => {
       </div>
 
       {/* About the App Section */}
-      <div className="expandable-section">
+      <div className="home-page-expandable-section">
         <h3>
           About the App{' '}
           <button
-            className={`toggle-btn ${aboutAppExpanded ? 'expanded' : 'collapsed'}`}
+            className={`home-page-toggle-btn ${aboutAppExpanded ? 'expanded' : 'collapsed'}`}
             onClick={toggleAboutAppVisibility}
           >
             {aboutAppExpanded ? 'Collapse' : 'Expand'}
           </button>
         </h3>
         {aboutAppExpanded && (
-          <div className="expandable-content">
+          <div className="home-page-expandable-content">
             <p>
               Explore Anything AI, our latest app that allows you to generate a wide variety
               of images using advanced AI models. From casual to photorealistic and even NSFW,
@@ -85,18 +86,18 @@ const HomePage = () => {
       </div>
 
       {/* Contact Us Section */}
-      <div className="expandable-section">
+      <div className="home-page-expandable-section">
         <h3>
           Contact Us{' '}
           <button
-            className={`toggle-btn ${contactUsExpanded ? 'expanded' : 'collapsed'}`}
+            className={`home-page-toggle-btn ${contactUsExpanded ? 'expanded' : 'collapsed'}`}
             onClick={toggleContactUsVisibility}
           >
             {contactUsExpanded ? 'Collapse' : 'Expand'}
           </button>
         </h3>
         {contactUsExpanded && (
-          <div className="expandable-content">
+          <div className="home-page-expandable-content">
             <p>
               For inquiries, feel free to reach out to us:<br />
               Phone: <span
@@ -116,7 +117,7 @@ const HomePage = () => {
         )}
       </div>
 
-      <p className="description">
+      <p className="home-page-description">
         <span style={{ color: 'white' }}>
           Explore our AI-powered image generators to create unique and fascinating images.
           Choose from different models and discover the creative possibilities.
@@ -131,11 +132,11 @@ const HomePage = () => {
         />
       </div>
       <h2>Select an option below:</h2>
-      <div className="options">
-        <Link to="/image-generator" className="option-button">
+      <div className="home-page-options">
+        <Link to="/image-generator" className="home-page-option-button">
           DALL-E Image Generator
         </Link>
-        <Link to="/image-generator-sd" className="option-button">
+        <Link to="/image-generator-sd" className="home-page-option-button">
           Image Generator SD
         </Link>
         {/* Add more options as needed */}

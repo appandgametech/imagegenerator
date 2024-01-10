@@ -1,48 +1,46 @@
 /* HomePage.css */
 
-.home-page {
+.home-page-container {
   text-align: center;
   padding: 20px;
   max-width: 100%;
   overflow-x: hidden;
 }
 
-.description {
+.home-page-description {
   color: white; /* Set the text color to white */
   margin-bottom: 20px;
 }
 
-h1 {
+.home-page h1 {
   color: white;
   font-size: 28px;
 }
 
-.by-text {
+.home-page .by-text {
   color: #fff;
 }
 
-img {
+.home-page img {
   max-width: 100%;
   height: auto;
   margin-bottom: 20px;
 }
 
-p {
+.home-page p {
   font-size: 18px;
   color: #333;
 }
 
-/* HomePage.css */
-
 /* ... (previous styles) */
 
-.options {
+.home-page-options {
   display: flex;
   justify-content: center;
   margin-top: 20px;
 }
 
-.option-button {
+.home-page-option-button {
   background-color: #d3bb06;
   color: #000; /* Set the text color to black */
   padding: 15px 30px;
@@ -55,41 +53,43 @@ p {
   margin: 0 10px;
 }
 
-.option-button:hover {
+.home-page-option-button:hover {
   background-color: #b7177d;
 }
 
-
 /* Expandable Sections Styles */
-.expandable-section {
+.home-page-expandable-section {
   margin-top: 20px;
 }
 
-.toggle-btn {
+.home-page-toggle-btn {
   border: none;
   background: none;
-  color: #d8de1b;
+  color: #fff; /* Set the text color to white */
   font-size: 16px;
   cursor: pointer;
+  transition: color 0.3s ease; /* Added transition for color change */
 }
 
-.toggle-btn:hover {
+.home-page-toggle-btn:hover {
+  color: #de1b89; /* Change color on hover to match ImageGenerator button */
   text-decoration: underline;
 }
 
-.collapsed .toggle-btn::after {
+.collapsed .home-page-toggle-btn::after {
   content: ' ▼'; /* Down arrow */
 }
 
-.expanded .toggle-btn::after {
+.expanded .home-page-toggle-btn::after {
   content: ' ▲'; /* Up arrow */
 }
 
-.expandable-content {
+.home-page-expandable-content {
   margin-top: 10px;
   padding: 10px;
   border: 1px solid #ccc;
   background-color: #f9f9f9;
+  color: black; /* Set the text color to black */
 }
 
 /* Styling for other sections (Who Are We, Contact Us, Company Information) can be added here */
