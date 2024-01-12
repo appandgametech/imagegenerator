@@ -57,7 +57,7 @@ const ImageGenerator = () => {
         },
         body: JSON.stringify({
           model: model,
-          prompt: `${inputRef.current.value} I NEED to test how the tool works with extremely simple prompts. DO NOT add any detail, just use it AS-IS:`,
+          prompt: `${inputRef.current.value}:`,
           n: 1,
           size: size,
         }),
